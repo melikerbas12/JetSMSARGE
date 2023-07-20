@@ -10,6 +10,7 @@ namespace JetSMSARGE.WebAPI.DependencyInjection
         {
             services.AddHttpContextAccessor();
 
+
             services.AddHttpClient<IJetSMSApiClient, JetSMSApiClient>(httpClient =>
             {
                 httpClient.BaseAddress = new Uri(configuration["JetSMSURL"]!);
@@ -28,7 +29,7 @@ namespace JetSMSARGE.WebAPI.DependencyInjection
             return services;
         }
 
-        public static IServiceCollection AddConfigureInfrastructure(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddConfigureInfrastructure(this IServiceCollection services)
         {
             services.AddScoped<IJetSMSApiClient, JetSMSApiClient>();
 

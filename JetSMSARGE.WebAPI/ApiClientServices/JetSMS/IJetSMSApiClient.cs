@@ -4,6 +4,6 @@ namespace JetSMSARGE.WebAPI.ApiClientServices.JetSMS
 {
     public interface IJetSMSApiClient
     {
-        public Task<SmsResponseDto> SendSms(SmsRequestDto model);
+        public Task<string> SendSms(SmsRequestDto model);
     }
 }
